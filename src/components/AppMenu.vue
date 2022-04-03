@@ -8,33 +8,41 @@
               :class="{'border-success' : filterType === 'all'}"
               type="button"
               class="btn shadow-none p-1 me-1"
-      >All</button>
+      >All
+      </button>
       <button @click="applyFilter('active')"
               :class="{'border-success' : filterType === 'active'}"
               type="button"
               class="btn shadow-none p-1"
-      >Active</button>
+      >Active
+      </button>
       <button @click="applyFilter('completed')"
               :class="{'border-success' : filterType === 'completed'}"
               type="button"
               class="btn shadow-none p-1 ms-1"
-      >Completed</button>
+      >Completed
+      </button>
     </div>
     <div>
-      <button @click="deleteCompletedTodos" v-show="isOneCompleted" type="button" class="btn shadow-none p-1">Clear completed</button>
+      <button @click="deleteCompletedTodos"
+              v-show="isOneCompleted"
+              type="button"
+              class="btn shadow-none p-1"
+      >Clear completed
+      </button>
     </div>
   </div>
 </template>
 
 <script>
-import {mapGetters, mapMutations} from 'vuex';
+import { mapGetters, mapMutations } from 'vuex'
 
 export default {
-  name: 'AppFooter',
+  name: 'AppMenu',
   methods: {
     ...mapMutations(['setFilterType', 'deleteCompletedTodos']),
-    applyFilter(filterType) {
-      this.setFilterType({filterType: filterType});
+    applyFilter (filterType) {
+      this.setFilterType({ filterType: filterType })
     }
   },
   computed: {

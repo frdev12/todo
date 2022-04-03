@@ -10,27 +10,23 @@
 </template>
 
 <script>
-import {mapActions} from 'vuex';
+import { mapActions } from 'vuex'
 
 export default {
-  name: 'AppToDoInput',
-  data() {
+  name: 'AppInput',
+  data () {
     return {
-      todo:'',
+      todo: '',
     }
   },
   methods: {
     ...mapActions(['setTodo']),
-    addNewTodo() {
+    addNewTodo () {
       if (this.todo) {
-        this.setTodo({todo: this.todo});
+        this.setTodo({ todo: this.todo })
       }
-      this.todo = '';
+      this.todo = ''
     }
   }
 }
 </script>
-
-<style scoped>
-
-</style>
